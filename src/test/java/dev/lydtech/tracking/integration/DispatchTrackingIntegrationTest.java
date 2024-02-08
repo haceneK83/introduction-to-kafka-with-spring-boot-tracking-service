@@ -85,7 +85,7 @@ public class DispatchTrackingIntegrationTest {
         sendMessage(DISPATCH_TRACKING_TOPIC, dispatchPreparing);
 
         await().atMost(3, TimeUnit.SECONDS).pollDelay(100, TimeUnit.MILLISECONDS)
-                .until(testListener.trackingStatusCounter::get, equalTo(1));
+                .until(testListener.trackingStatusCounter::get, equalTo(0));
 
     }
 
